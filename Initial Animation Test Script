@@ -1,0 +1,49 @@
+-- Initial animation test script
+-- Created by robloxmustgodown "RTVScripter"
+local but = script.Parent -- Points to gui button
+local scr = script.Parent.Parent.Parent -- Points to TV screen (model)
+local gui = script.Parent.Parent -- Points to the surface gui
+
+local function butPress() -- When the button is pressed it will play the preset frames below
+	but.BackgroundColor3 = Color3.new(0, 170, 0) -- Button turns green
+	gui.img.Image = "rbxgameasset://Images/Frame1"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame2"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame3"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame4"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame5"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame6"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame7"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame8"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame9"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame10"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame11"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame12"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame13"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame14"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame15"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame16"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame17"
+	wait (0.05)
+	gui.img.Image = "rbxgameasset://Images/Frame18"
+	wait (1)
+	but.BackgroundColor3 = Color3.new(170, 0, 0) -- Button turns red
+	gui.img.Image = "rbxgameasset://Images/Frame0" -- Screen is blacked out
+end
+
+but.MouseButton1Click:connect(butPress) -- Activates function upon the button being pressed
