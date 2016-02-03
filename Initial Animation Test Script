@@ -6,52 +6,52 @@ local gui = script.Parent.Parent -- Points to the surface gui
 local tvStat = 0 -- Defines the status of the TV (on or off)
 
 local function butPress() -- When the button is pressed it will play the preset frames below
-	but.BackgroundColor3 = Color3.new(0, 170, 0) -- Button turns green
-	tvStat = 1 -- TV is on
-	gui.img.Image = "rbxgameasset://Images/Frame1"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame2"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame3"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame4"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame5"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame6"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame7"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame8"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame9"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame10"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame11"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame12"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame13"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame14"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame15"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame16"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame17"
-	wait (0.05)
-	gui.img.Image = "rbxgameasset://Images/Frame18"
-	wait (1)
-	but.BackgroundColor3 = Color3.new(170, 0, 0) -- Button turns red
-	gui.img.Image = "rbxgameasset://Images/Frame0" -- Screen is blacked out
-	print (tvStat, "TV 1")
+	if tvStat == 0 then
+		but.BackgroundColor3 = Color3.new(0, 170, 0) -- Button turns green
+		tvStat = 1 -- TV is on
+		gui.img.Image = "rbxgameasset://Images/Frame1"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame2"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame3"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame4"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame5"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame6"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame7"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame8"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame9"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame10"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame11"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame12"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame13"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame14"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame15"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame16"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame17"
+		wait (0.05)
+		gui.img.Image = "rbxgameasset://Images/Frame18"
+		wait (1)
+		but.BackgroundColor3 = Color3.new(170, 0, 0) -- Button turns red
+		gui.img.Image = "rbxgameasset://Images/Frame0" -- Screen is blacked out
+		tvStat = 0 -- TV is off
+		print (tvStat, "TV 1")
+	else
+		-- Nothing. This is used to prevent the button from working while the TV is on
+	end
 end
 
-while tvStat == 1 do -- [WIP] Stopping button from working while TV is on to prevent overlapping frames
-	but.MouseButton1Click:connect(butPress) -- Activates TV upon the button being pressed
-	tvStat = 0 -- TV is off
-	wait(0.1)
-	print (tvStat, "TV 2")	
-end
+but.MouseButton1Click:connect(butPress) -- Activates TV upon the button being pressed
